@@ -8,7 +8,7 @@ module.exports = {
   deduce2() {
     return 80
   },
-  init() {
-    console.log('执行init流程');
+  init({ option, param }) {
+    console.log('执行init流程', option, param);
   }
 }
