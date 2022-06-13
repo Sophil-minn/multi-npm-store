@@ -46,18 +46,18 @@ const path = require('path');
 // });
 
 // spawn: 耗时任务（比如： npm install）, 需要不断打印日志
-const child = cp.spawn('cnpm', ['install'], {
-  cwd: path.resolve('/Users/yanghuimin/multi-npm-demo/beibei-test-lib')
-});
+// const child = cp.spawn('cnpm', ['install'], {
+//   cwd: path.resolve('/Users/yanghuimin/multi-npm-demo/beibei-test-lib')
+// });
 
 // exec/execFile：开销比较小的任务
 
-child.stdout.on('data', function(chunk){
-  console.log('stdout', chunk.toString());
-});
-child.stderr.on('data', function(chunk){
-  console.log('stderr', chunk.toString());
-});
+// child.stdout.on('data', function(chunk){
+//   console.log('stdout', chunk.toString());
+// });
+// child.stderr.on('data', function(chunk){
+//   console.log('stderr', chunk.toString());
+// });
 
 // cp.exec('npm install', {
 //   cwd: path.resolve('/Users/yanghuimin/multi-npm-demo/beibei-test-lib'),
@@ -71,3 +71,17 @@ child.stderr.on('data', function(chunk){
 // });
 
 // console.log(child.pid, process.pid);
+
+// 
+
+const child = cp.fork(path.resolve(__dirname, 'child.js'));
+
+child.send(' Hello child process!', () => {
+  // child.disconnect();
+} );
+
+child.on('message', (msg) => {
+  console.log('主进程收到的信息为： ', msg);
+});
+
+console.log('main pid:', process.pid);
