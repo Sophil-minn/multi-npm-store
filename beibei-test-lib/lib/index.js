@@ -9,6 +9,6 @@ module.exports = {
     return 80
   },
   init({ option, param }) {
-    console.log('执行init流程', option, param);
+    console.log('20220604执行init流程', option, param);
   }
 }
