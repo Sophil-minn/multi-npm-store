@@ -74,14 +74,22 @@ const path = require('path');
 
 // 
 
-const child = cp.fork(path.resolve(__dirname, 'child.js'));
+// const child = cp.fork(path.resolve(__dirname, 'child.js'));
 
-child.send(' Hello child process!', () => {
-  // child.disconnect();
-} );
+// child.send(' Hello child process!', () => {
+//   // child.disconnect();
+// } );
 
-child.on('message', (msg) => {
-  console.log('主进程收到的信息为： ', msg);
-});
+// child.on('message', (msg) => {
+//   console.log('主进程收到的信息为： ', msg);
+// });
 
-console.log('main pid:', process.pid);
+
+const ret = cp.execSync('ls -al|grep bin');
+console.log(ret.toString());
+const ret2 = cp.execFileSync('ls', ['-al']);
+console.log(ret2.toString());
+const ret3 = cp.spawnSync('ls', ['-al']);
+console.log(ret3.toString());
+
+// console.log('main pid:', process.pid);
