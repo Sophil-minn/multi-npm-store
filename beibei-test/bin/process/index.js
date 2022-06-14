@@ -46,9 +46,10 @@ const path = require('path');
 // });
 
 // spawn: 耗时任务（比如： npm install）, 需要不断打印日志
-// const child = cp.spawn('cnpm', ['install'], {
-//   cwd: path.resolve('/Users/yanghuimin/multi-npm-demo/beibei-test-lib')
-// });
+const child = cp.spawn('npm', ['install'], {
+  cwd: path.resolve('/Users/yanghuimin/multi-npm-demo/beibei-test-lib'),
+  stdio: 'inherit'
+});
 
 // exec/execFile：开销比较小的任务
 
@@ -85,11 +86,11 @@ const path = require('path');
 // });
 
 
-const ret = cp.execSync('ls -al|grep bin');
-console.log(ret.toString());
-const ret2 = cp.execFileSync('ls', ['-al']);
-console.log(ret2.toString());
-const ret3 = cp.spawnSync('ls', ['-al']);
-console.log(ret3.toString());
+// const ret = cp.execSync('ls -al|grep bin');
+// console.log(ret.toString());
+// const ret2 = cp.execFileSync('ls', ['-al']);
+// console.log(ret2.toString());
+// const ret3 = cp.spawnSync('ls', ['-al']);
+// console.log(ret3.toString());
 
 // console.log('main pid:', process.pid);
