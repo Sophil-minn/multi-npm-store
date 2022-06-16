@@ -2,15 +2,9 @@ var inquirer = require('inquirer');
 inquirer
   .prompt([
     {
-      type: 'password',
+      type: 'editor',
       name: 'choice',
       message: 'your choice',
-      default: 0,
-      choices: [
-        {value: "R", name: 'red'},
-        {value: "G", name: 'green'},
-        {value: "B", name: 'blue'},
-      ]
     },
     {
       type: 'number',
