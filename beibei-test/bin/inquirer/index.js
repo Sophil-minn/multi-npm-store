@@ -2,7 +2,7 @@ var inquirer = require('inquirer');
 inquirer
   .prompt([
     {
-      type: 'list',
+      type: 'rawlist',
       name: 'choice',
       message: 'your choice',
       default: 0,
