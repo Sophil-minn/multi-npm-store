@@ -13,12 +13,13 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.27.2",
+    "commander": "^9.3.0",
     "fs-extra": "^10.1.0",
+    "inquirer": "^8.2.4",
+    "npminstall": "^6.3.0",
     "path-exists": "^5.0.0",
     "pkg-dir": "^6.0.1",
-    "commander": "^9.3.0",
-    "npminstall": "^6.3.0",
-    "yargs": "^16.2.0",
-    "user-home": "^3.0.0"
+    "user-home": "^3.0.0",
+    "yargs": "^16.2.0"
   }
 }

@@ -1,3 +1,4 @@
 #!/usr/bin/env node
 
-require('./process');
+// require('./process');
+require('./inquirer');
