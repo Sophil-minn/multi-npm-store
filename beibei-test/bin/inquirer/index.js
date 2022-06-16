@@ -2,7 +2,7 @@ var inquirer = require('inquirer');
 inquirer
   .prompt([
     {
-      type: 'checkbox',
+      type: 'password',
       name: 'choice',
       message: 'your choice',
       default: 0,
