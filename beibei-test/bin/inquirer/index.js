@@ -2,14 +2,14 @@ var inquirer = require('inquirer');
 inquirer
   .prompt([
     {
-      type: 'rawlist',
+      type: 'expand',
       name: 'choice',
       message: 'your choice',
-      default: 0,
+      default: 'red',
       choices: [
-        {value: 0, name: 'Minnn'},
-        {value: 1, name: 'hui'},
-        {value: 2, name: 'yang'},
+        {key: "R", value: 'red'},
+        {key: "G", value: 'green'},
+        {key: "B", value: 'blue'},
       ]
     },
     {
