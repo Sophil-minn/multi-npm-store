@@ -2,14 +2,14 @@ var inquirer = require('inquirer');
 inquirer
   .prompt([
     {
-      type: 'expand',
+      type: 'checkbox',
       name: 'choice',
       message: 'your choice',
-      default: 'red',
+      default: 0,
       choices: [
-        {key: "R", value: 'red'},
-        {key: "G", value: 'green'},
-        {key: "B", value: 'blue'},
+        {value: "R", name: 'red'},
+        {value: "G", name: 'green'},
+        {value: "B", name: 'blue'},
       ]
     },
     {
